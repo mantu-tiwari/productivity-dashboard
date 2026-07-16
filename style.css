@@ -19,6 +19,7 @@ main{
     padding: 0.5rem;
     width: 100%;
     min-height: 100vh;
+    position: relative;
 }
 nav{
     background-color: var(--secondary-color);
@@ -51,7 +52,7 @@ nav i:hover{
 section{
   padding: 1rem 2rem;
 }
-.dashboard{
+.hero-dashboard{
   min-height: 35vh;
   display: flex;
   flex-wrap: wrap;
@@ -59,7 +60,7 @@ section{
   margin-top: 1rem;
   border-radius: 1rem;
 }
-.hero-dsb{
+.summary-dsb{
   background-color: var(--secondary-color);
   border-radius: 2rem;  
   padding: 1rem;
@@ -85,7 +86,6 @@ section{
 .feature-dsb img{
   width: 50px;
 }
-
 /* Card Section  */
 .cards{
   display: flex;
@@ -116,4 +116,59 @@ section{
   color: white;
   border: none;
   cursor: pointer;
+}
+
+/* To-Do Page Section */
+#todo-page{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--secondary-color);
+  display: none;
+}
+
+/* Daily Planner Page Section */
+#planner-page{
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--secondary-color);
+  display: none;
+}
+
+/* Daily Foal Page Section */
+#goal-page{
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--secondary-color);
+  display: none;
+}
+
+/* Pomodomo Page Section */
+#pomodomo-page{
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--secondary-color);
+  display: none;
+}
+
+/* Quote Page Section */
+#quote-page{
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--secondary-color);
+  display: none;
 }
