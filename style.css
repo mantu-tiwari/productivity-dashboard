@@ -120,13 +120,14 @@ section{
 
 /* To-Do Page Section */
 #todo-page{
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   background-color: var(--secondary-color);
   display: none;
+  flex-direction: column;
 }
 
 /* Daily Planner Page Section */
