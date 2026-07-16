@@ -1,5 +1,6 @@
 const body = document.body
 const dashboard = document.querySelector('.dashboard')
+const nav = document.querySelector('nav')
 const todoBtn = document.querySelector('#todo-card button')
 const todoPage = document.querySelector('#todo-page')
 const todoClose = document.querySelector('#todo-page button')

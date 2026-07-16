@@ -26,12 +26,11 @@ html, body {
 main{
     padding: 0.5rem;
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     position: relative;
 }
 nav{
     background-color: var(--secondary-color);
-    border-radius: var(--rounded);
     display: flex;
     justify-content: space-between;
     padding: 1rem ;
@@ -130,57 +129,52 @@ section{
 
 /* To-Do Page Section */
 #todo-page{
-  min-height: 100vh;
-  width: 100%;
+  /* width: 100%; */
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   display: none;
   flex-direction: column;
 }
 
 /* Daily Planner Page Section */
 #planner-page{
-  min-height: 100vh;
-  width: 100%;
+  /* width: 100%; */
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   display: none;
 }
 
 /* Daily Foal Page Section */
 #goal-page{
-  min-height: 100vh;
-  width: 100%;
+  /* width: 100%; */
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   display: none;
 }
 
 /* Pomodomo Page Section */
 #pomodomo-page{
-  min-height: 100vh;
-  width: 100%;
+  /* width: 100%; */
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   display: none;
 }
 
 /* Quote Page Section */
 #quote-page{
-  min-height: 100vh;
-  width: 100%;
+  /* width: 100%; */
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   display: none;
 }
 
