@@ -14,8 +14,10 @@ const pomodomoClose = document.querySelector('#pomodomo-page button')
 const quoteBtn = document.querySelector('#quote-card button')
 const quotePage = document.querySelector('#quote-page')
 const quoteClose = document.querySelector('#quote-page button')
+const date = document.querySelector('#date h3')
+const time = document.querySelector('#time h3')
 
-
+// Open Page and Close Page
 function toggelPage (openBtn, page, closeBtn) {
     openBtn.addEventListener('click', () => {
         page.style.display = 'block'
@@ -31,3 +33,15 @@ toggelPage(plannerBtn, plannerPage, plannerClose)
 toggelPage(goalBtn, goalPage, goalClose)
 toggelPage(pomodomoBtn, pomodomoPage, pomodomoClose)
 toggelPage(quoteBtn, quotePage, quoteClose)
+
+// Date and Time Implementaion
+const now = new Date()
+function updateTime() {
+    const now = new Date()
+    time.textContent = now.toLocaleTimeString()
+}
+updateTime()
+date.textContent = now.toDateString()
+setInterval(updateTime  , 1000);
+
+
