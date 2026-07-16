@@ -2,8 +2,8 @@
   --primary-color: #C5B3D3;
   --secondary-color: #FBEFEF;
   --btn-color: #7f2ebc;
+  --rounded: 0.7rem;
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -22,54 +22,80 @@ main{
 }
 nav{
     background-color: var(--secondary-color);
-    border-radius: 1rem;
+    border-radius: var(--rounded);
     display: flex;
     justify-content: space-between;
-    padding: 1rem 4rem;
+    padding: 1rem ;
     align-items: center;
-
+}
+nav .logo{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+nav .logo img{
+  width: 40px;
 }
 nav i{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    padding: 0.5rem;
+}
+nav i:hover{
+  transform: rotate(180deg);
 }
 
+/* Dashboard Section */
 section{
-  padding: 1rem 5rem;
+  padding: 1rem 2rem;
 }
-
-/* Dashboard */
 .dashboard{
-  min-height: 50vh;
+  min-height: 35vh;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
   border-radius: 1rem;
 }
-
-.date{
+.hero-dsb{
   background-color: var(--secondary-color);
-  /* width: 40%; */
-  flex: 1 1 250px;
-  border-radius: 1rem;  
+  border-radius: 2rem;  
+  padding: 1rem;
+  text-align: center;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* background-image: url(https://www.shutterstock.com/shutterstock/videos/4000569385/thumb/1.jpg?ip=x480);
+  background-size: cover; */
 }
-.weather{
-  border-radius: 1rem;      
+.feature-dsb{
   background-color: var(--secondary-color);
-  flex: 1 1 250px;
-  /* width: 40%; */
+  border-radius: 2rem; 
+  padding: 1rem; 
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.feature-dsb img{
+  width: 50px;
 }
 
+/* Card Section  */
 .cards{
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-
 }
 .feature-card{
   flex: 1;
   background-color: var(--secondary-color);
-  border-radius: 1rem;
+  border-radius: var(--rounded);
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -77,6 +103,10 @@ section{
   align-items: center;
   gap: 1rem;
   text-align: center;
+  transition: all ease 0.3s;
+}
+.feature-card:hover{
+  transform: translateY(-8px);
 }
 .feature-card button{
   padding: 0.5rem 2rem;
