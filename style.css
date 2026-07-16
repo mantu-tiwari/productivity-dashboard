@@ -1,6 +1,7 @@
 :root{
   --primary-color: #C5B3D3;
   --secondary-color: #FBEFEF;
+  --btn-color: #7f2ebc;
 }
 
 * {
@@ -38,7 +39,7 @@ section{
 
 /* Dashboard */
 .dashboard{
-  min-height: 30vh;
+  min-height: 50vh;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -49,12 +50,40 @@ section{
 .date{
   background-color: var(--secondary-color);
   /* width: 40%; */
-  flex: 1;
+  flex: 1 1 250px;
   border-radius: 1rem;  
 }
 .weather{
   border-radius: 1rem;      
   background-color: var(--secondary-color);
-  flex: 1;
+  flex: 1 1 250px;
   /* width: 40%; */
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+}
+.feature-card{
+  flex: 1;
+  background-color: var(--secondary-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+.feature-card button{
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  background-color: black;
+  font-weight: 700;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
