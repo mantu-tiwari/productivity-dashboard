@@ -3,6 +3,14 @@
   --secondary-color: #FBEFEF;
   --btn-color: #7f2ebc;
   --rounded: 0.7rem;
+  --primary-dark: #000000;
+  --secondary-dark: #282A3A;
+  --effect: all ease 0.2s
+}
+.dark{
+  --primary-color: #000000;
+  --secondary-color: #282A3A;
+  color: white;
 }
 * {
   margin: 0;
@@ -28,6 +36,7 @@ nav{
     justify-content: space-between;
     padding: 1rem ;
     align-items: center;
+    transition: var(--effect);
 }
 nav .logo{
   display: flex;
@@ -41,7 +50,7 @@ nav .logo img{
 nav i{
     font-size: 1.8rem;
     cursor: pointer;
-    transition: all ease-in-out 0.3s;
+    transition: var(--effect);
     padding: 0.5rem;
 }
 nav i:hover{
@@ -51,6 +60,7 @@ nav i:hover{
 /* Dashboard Section */
 section{
   padding: 1rem 2rem;
+  transition: var(--effect);
 }
 .hero-dashboard{
   min-height: 35vh;
@@ -103,7 +113,7 @@ section{
   align-items: center;
   gap: 1rem;
   text-align: center;
-  transition: all ease 0.3s;
+  transition: var(--effect);
 }
 .feature-card:hover{
   transform: translateY(-8px);
@@ -173,3 +183,4 @@ section{
   background-color: var(--secondary-color);
   display: none;
 }
+

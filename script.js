@@ -1,3 +1,4 @@
+const body = document.body
 const dashboard = document.querySelector('.dashboard')
 const todoBtn = document.querySelector('#todo-card button')
 const todoPage = document.querySelector('#todo-page')
@@ -16,6 +17,7 @@ const quotePage = document.querySelector('#quote-page')
 const quoteClose = document.querySelector('#quote-page button')
 const date = document.querySelector('#date h3')
 const time = document.querySelector('#time h3')
+const themeBtn = document.querySelector('nav i')
 
 // Open Page and Close Page
 function toggelPage (openBtn, page, closeBtn) {
@@ -43,5 +45,10 @@ function updateTime() {
 updateTime()
 date.textContent = now.toDateString()
 setInterval(updateTime  , 1000);
+
+// Theme Implementation
+themeBtn.addEventListener('click', () => {
+    body.classList.toggle('dark')
+})
 
 
