@@ -136,7 +136,7 @@ section{
   top: 0;
   left: 0;
   background-color: var(--primary-color);
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 2rem;
 }
@@ -215,6 +215,9 @@ section{
   font-weight: 700;
   font-size: 1.2rem;
   cursor: pointer;
+}
+.important{
+  color: gold !important;
 }
 
 /* Daily Planner Page Section */
