@@ -281,15 +281,96 @@ section{
   cursor: pointer;
 }
 
-
 /* Daily Foal Page Section */
 #goal-page{
-  /* width: 100%; */
+  width: 100%;
+  min-height: 80vh;
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   background-color: var(--primary-color);
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.back-btn button{
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  background-color: black;
+  font-weight: 700;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.goal-container{
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--rounded);
+  padding: 1rem 2rem;
+  gap: 1rem;
+  width: fit-content;
+  align-self: center;
+}
+.goal-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.goal-form input{
+  padding: 0.7rem 3rem;
+  outline: none;
+  border-radius: var(--rounded);
+}
+.goal-form button{
+  padding: 0.7rem 3rem;
+  border-radius: 1rem;
+  background-color: black;
+  font-weight: 700;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.goal-works{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 40vmax;
+  /* gap: 10rem; */
+  border-radius: 4rem;
+  padding: 1.5rem 2rem;
+  background-color: var(--primary-color);
+  margin-top: 1rem;
+}
+.goal-works input[type='checkbox'] {
+  cursor: pointer;
+  transform: scale(1.5);
+}
+.goal-works div{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.goal-works i{
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: darkred;
+}
+.goal-works label{
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.important{
+  color: gold !important;
+}
+.completed{
+    text-decoration: line-through;
+    opacity: .6;
 }
 
 /* Pomodomo Page Section */
