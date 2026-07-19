@@ -382,7 +382,7 @@ section{
   top: 0;
   left: 0;
   background-color: var(--primary-color);
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 2rem;
 }
@@ -412,11 +412,6 @@ section{
 .pomodomo-container h1{
   font-size: 5rem;
   font-weight: 400;
-}
-.timer-desing{
-  height: 10rem;
-  width: 10rem;
-  background-color: palevioletred;
 }
 .media-btn{
   display: flex;

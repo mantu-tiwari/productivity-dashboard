@@ -25,6 +25,10 @@ const todoContainer = document.querySelector(".todo-list");
 const plannerContainer = document.querySelector(".planner-cards");
 const goalContainer = document.querySelector(".goal-list");
 const goalForm = document.querySelector(".goal-form");
+const playBtn = document.querySelector("#play-btn");
+const pauseBtn = document.querySelector("#pause-btn");
+const resetBtn = document.querySelector("#reset-btn");
+const timer = document.querySelector(".pomodomo-container h1");
 
 // Open Page and Close Page
 function toggelPage(openBtn, page, closeBtn) {
@@ -159,3 +163,38 @@ const completedGoal = (i) => {
   console.log(goalData[i]);
   renderGoal();
 };
+
+// Pomodomo Application
+let timeleft = 25 * 60;
+let timeInterval = null;
+playBtn.addEventListener("click", () => {
+  if (timeInterval) return;
+  timeInterval = setInterval(() => {
+    timeleft--;
+    const minute = Math.floor(timeleft / 60);
+    const second = timeleft % 60;
+    if (second < 10) {
+      timer.innerHTML = `${minute}:0${second}`;
+    } else if (minute < 10) {
+      timer.innerHTML = `0${minute}:${second}`;
+    } else {
+      timer.innerHTML = `${minute}:${second}`;
+    }
+  }, 1000);
+
+  if (timeleft === 0) {
+    clearInterval(timeInterval);
+    alert("Times Up...");
+  }
+});
+pauseBtn.addEventListener("click", () => {
+  clearInterval(timeInterval);
+  timeInterval = null;
+  console.log(timeInterval);
+});
+resetBtn.addEventListener("click", () => {
+  clearInterval(timeInterval);
+  timeInterval = null;
+  timeleft = 25*60
+  timer.innerHTML = '25:00'
+});
