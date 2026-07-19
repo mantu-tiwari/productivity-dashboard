@@ -375,12 +375,56 @@ section{
 
 /* Pomodomo Page Section */
 #pomodomo-page{
-  /* width: 100%; */
+  width: 100%;
+  min-height: 80vh;
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   background-color: var(--primary-color);
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.back-btn button{
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  background-color: black;
+  font-weight: 700;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.pomodomo-container{
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  align-self: center;
+  padding: 2rem;
+  border-radius: 50%;
+  height: 25vw;
+  width: 25vw;
+}
+.pomodomo-container h1{
+  font-size: 5rem;
+  font-weight: 400;
+}
+.timer-desing{
+  height: 10rem;
+  width: 10rem;
+  background-color: palevioletred;
+}
+.media-btn{
+  display: flex;
+  gap: 1rem;
+}
+.media-btn img{
+  width: 4rem;
+  cursor: pointer;
 }
 
 /* Quote Page Section */
@@ -393,3 +437,10 @@ section{
   display: none;
 }
 
+
+@media (max-width: 768px) {
+  .pomodomo-container{
+    height: 40vh;
+    width: 40vh;
+  }
+}
