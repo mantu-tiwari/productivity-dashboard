@@ -33,6 +33,9 @@ const newQuoteBtn = document.querySelector('.quote-container button')
 const quoteTxt = document.querySelector('.quote-area h1')
 const quoteAuthor = document.querySelector('.quote-area p')
 const dashboardQuote = document.querySelector('.summary-dsb p')
+const weather = document.querySelector('#weather p')
+const tempe = document.querySelector('#weather h3')
+const city = document.querySelector('#weather h2')
 
 // Open Page and Close Page
 function toggelPage(openBtn, page, closeBtn) {
@@ -216,4 +219,29 @@ async function newQuote() {
   dashboardQuote.textContent = data.quote
 }
 newQuote()
+
+// weather Implementation
+const apiKey = "739c3f2fa3733eef18802930b18ad22c";
+navigator.geolocation.getCurrentPosition(currentTemp);
+async function currentTemp(position) {
+    try {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
+        if (!response.ok) {
+            throw new Error("Weather API Error");
+        }
+        const data = await response.json();
+        console.log(data);
+        city.textContent = data.name;
+        tempe.textContent = `${Math.round(data.main.temp)}°C`;
+        weather.textContent = data.weather[0].main;
+    } catch (err) {
+        console.log(err);
+        city.textContent = "Unavailable";
+        tempe.textContent = "--°C";
+        weather.textContent = "Weather unavailable";
+    }
+
+}
 
