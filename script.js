@@ -23,6 +23,8 @@ const themeBtn = document.querySelector("nav i");
 const todoForm = document.querySelector(".todo-form");
 const todoContainer = document.querySelector(".todo-list");
 const plannerContainer = document.querySelector(".planner-cards");
+const goalContainer = document.querySelector(".goal-list");
+const goalForm = document.querySelector(".goal-form");
 
 // Open Page and Close Page
 function toggelPage(openBtn, page, closeBtn) {
@@ -118,3 +120,42 @@ clearBtns.forEach((btn) => {
     plannerForm.querySelector("textarea").value = "";
   });
 });
+
+// Daily Goals Application
+const goalData = [];
+const renderGoal = () => {
+  goalContainer.innerHTML = "";
+  goalData.forEach((task, i) => {
+    goalContainer.innerHTML += `<div class="todo-works">
+              <h3 class='${task.completed ? "completed" : ""} ' > ${task.task} </h3>
+              <div>
+                <label> 
+                  <input onclick="completedGoal(${i})" type="checkbox" ${task.completed ? "checked" : ""} name="Complete" > Complete
+                </label>
+                <i onclick="deleteGoal(${i})" class="fa-solid fa-trash"></i>
+              </div>
+            </div>`;
+  });
+};
+renderGoal();
+goalForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const taskValue = e.target[0].value;
+  goalData.push({
+    task: taskValue,
+    completed: false,
+  });
+  console.log(goalData);
+  renderGoal();
+  goalForm.reset();
+});
+const deleteGoal = (idx) => {
+  goalData.splice(idx, 1);
+  console.log(goalData);
+  renderGoal();
+};
+const completedGoal = (i) => {
+  goalData[i].completed = !goalData[i].completed;
+  console.log(goalData[i]);
+  renderGoal();
+};
