@@ -22,6 +22,7 @@ const themeBtn = document.querySelector("nav i");
 
 const todoForm = document.querySelector(".todo-form");
 const todoContainer = document.querySelector(".todo-list");
+const plannerContainer = document.querySelector(".planner-cards");
 
 // Open Page and Close Page
 function toggelPage(openBtn, page, closeBtn) {
@@ -61,18 +62,18 @@ const renderTodo = () => {
   todoContainer.innerHTML = "";
   todoData.forEach((task, i) => {
     todoContainer.innerHTML += `<div class="todo-works">
-              <h3 class='${task.completed ? 'completed' : ''} ' > ${task.task} </h3>
+              <h3 class='${task.completed ? "completed" : ""} ' > ${task.task} </h3>
               <div>
                 <label> 
-                  <input onclick="completedTask(${i})" type="checkbox" ${task.completed ? 'checked' : ''} name="Complete" > Complete
+                  <input onclick="completedTask(${i})" type="checkbox" ${task.completed ? "checked" : ""} name="Complete" > Complete
                 </label>
                 <i onclick="deleteTask(${i})" class="fa-solid fa-trash"></i>
-                <i onclick="impTask(${i})" class="fa-solid fa-star ${task.important ? "important" : ''}"></i>
+                <i onclick="impTask(${i})" class="fa-solid fa-star ${task.important ? "important" : ""}"></i>
               </div>
             </div>`;
   });
 };
-renderTodo()
+renderTodo();
 
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -93,11 +94,27 @@ const deleteTask = (idx) => {
 };
 const impTask = (i) => {
   todoData[i].important = !todoData[i].important;
-      console.log(todoData[i]);  
+  console.log(todoData[i]);
   renderTodo();
 };
 const completedTask = (i) => {
   todoData[i].completed = !todoData[i].completed;
-      console.log(todoData[i]);  
+  console.log(todoData[i]);
   renderTodo();
 };
+
+// Daily Planner Application
+for (let i = 0; i < 24; i++) {
+  plannerContainer.innerHTML += `<div class="planner-form">
+  <h3>${i}:00</h3>
+  <textarea name="" id=""></textarea>
+  <button class='clear-btn' >Reset</button>
+  </div>`;
+}
+const clearBtns = document.querySelectorAll(".clear-btn");
+clearBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const plannerForm = btn.closest(".planner-form");
+    plannerForm.querySelector("textarea").value = "";
+  });
+});
