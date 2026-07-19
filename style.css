@@ -1,16 +1,12 @@
 :root{
   --primary-color: #C5B3D3;
   --secondary-color: #FBEFEF;
-  --btn-color: #7f2ebc;
+  --btn-bgcolor: #282A3A;
+  --btn-color: #ffffff;
   --rounded: 0.7rem;
   --primary-dark: #000000;
   --secondary-dark: #282A3A;
   --effect: all ease 0.2s
-}
-.dark{
-  --primary-color: #000000;
-  --secondary-color: #282A3A;
-  color: white;
 }
 * {
   margin: 0;
@@ -23,10 +19,25 @@ html, body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: var(--primary-color);
 }
+.dark{
+  --primary-color: #000000;
+  --secondary-color: #282A3A;
+  --btn-bgcolor: #C5B3D3;
+  --btn-color: #282A3A;
+  color: white;
+}
+button{
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--btn-bgcolor);
+  font-weight: 700;
+  color: var(--btn-color);
+  border: none;
+  cursor: pointer;
+}
 main{
     padding: 0.5rem;
     width: 100%;
-    /* min-height: 100vh; */
     position: relative;
 }
 nav{
@@ -78,8 +89,6 @@ section{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  /* background-image: url(https://www.shutterstock.com/shutterstock/videos/4000569385/thumb/1.jpg?ip=x480);
-  background-size: cover; */
 }
 .feature-dsb{
   background-color: var(--secondary-color);
@@ -95,6 +104,7 @@ section{
 .feature-dsb img{
   width: 50px;
 }
+
 /* Card Section  */
 .cards{
   display: flex;
@@ -117,18 +127,9 @@ section{
 .feature-card:hover{
   transform: translateY(-8px);
 }
-.feature-card button{
-  padding: 0.5rem 2rem;
-  border-radius: 1rem;
-  background-color: black;
-  font-weight: 700;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
 
-/* To-Do Page Section */
-#todo-page{
+/* Page Sections */
+.external-page{
   width: 100%;
   min-height: 80vh;
   overflow: hidden;
@@ -136,20 +137,10 @@ section{
   top: 0;
   left: 0;
   background-color: var(--primary-color);
-  display: none;
   flex-direction: column;
   gap: 2rem;
 }
-.back-btn button{
-  padding: 0.5rem 2rem;
-  border-radius: 1rem;
-  background-color: black;
-  font-weight: 700;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-.todo-container{
+.container{
   background-color: var(--secondary-color);
   display: flex;
   flex-direction: column;
@@ -160,6 +151,10 @@ section{
   gap: 1rem;
   width: fit-content;
   align-self: center;
+}
+/* To-Do Page Section */
+#todo-page{
+  display: none;
 }
 .todo-form {
   display: flex;
@@ -172,21 +167,11 @@ section{
   outline: none;
   border-radius: var(--rounded);
 }
-.todo-form button{
-  padding: 0.7rem 3rem;
-  border-radius: 1rem;
-  background-color: black;
-  font-weight: 700;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
 .todo-works{
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-width: 40vmax;
-  /* gap: 10rem; */
   border-radius: 4rem;
   padding: 1.5rem 2rem;
   background-color: var(--primary-color);
@@ -226,27 +211,7 @@ section{
 
 /* Daily Planner Page Section */
 #planner-page{
-  width: 100%;
-  min-height: 80vh;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--primary-color);
   display: none;
-  flex-direction: column;
-  gap: 2rem;
-}
-.planner-container{
-  background-color: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: var(--rounded);
-  width: fit-content;
-  align-self: center;
-  padding: 2rem;
-  gap: 2rem;
 }
 .planner-cards{
   display: flex;
@@ -263,7 +228,6 @@ section{
   background-color: var(--primary-color);
   border-radius: var(--rounded);
   justify-content: center;
-
 }
 .planner-form textarea{
   padding: 1rem 4rem;
@@ -271,49 +235,10 @@ section{
   font-size: 1rem;
   font-weight: 600;
 }
-.planner-form button{
-  padding: 1rem 3rem;
-  border-radius: 1rem;
-  background-color: black;
-  font-weight: 700;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
 
 /* Daily Foal Page Section */
 #goal-page{
-  width: 100%;
-  min-height: 80vh;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--primary-color);
   display: none;
-  flex-direction: column;
-  gap: 2rem;
-}
-.back-btn button{
-  padding: 0.5rem 2rem;
-  border-radius: 1rem;
-  background-color: black;
-  font-weight: 700;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-.goal-container{
-  background-color: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: var(--rounded);
-  padding: 1rem 2rem;
-  gap: 1rem;
-  width: fit-content;
-  align-self: center;
 }
 .goal-form {
   display: flex;
@@ -326,21 +251,11 @@ section{
   outline: none;
   border-radius: var(--rounded);
 }
-.goal-form button{
-  padding: 0.7rem 3rem;
-  border-radius: 1rem;
-  background-color: black;
-  font-weight: 700;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
 .goal-works{
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-width: 40vmax;
-  /* gap: 10rem; */
   border-radius: 4rem;
   padding: 1.5rem 2rem;
   background-color: var(--primary-color);
@@ -375,36 +290,9 @@ section{
 
 /* Pomodomo Page Section */
 #pomodomo-page{
-  width: 100%;
-  min-height: 80vh;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--primary-color);
   display: none;
-  flex-direction: column;
-  gap: 2rem;
-}
-.back-btn button{
-  padding: 0.5rem 2rem;
-  border-radius: 1rem;
-  background-color: black;
-  font-weight: 700;
-  color: white;
-  border: none;
-  cursor: pointer;
 }
 .pomodomo-container{
-  background-color: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  align-self: center;
-  padding: 2rem;
   border-radius: 50%;
   height: 25vw;
   width: 25vw;
@@ -424,55 +312,13 @@ section{
 
 /* Quote Page Section */
 #quote-page{
-  width: 100%;
-  min-height: 80vh;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--primary-color);
   display: none;
-  flex-direction: column;
-  gap: 2rem;
-}
-.quote-container{
-  background-color: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
-  align-self: center;
-  gap: 2rem;
-  padding: 1rem ;
-  border-radius: var(--rounded);
-}
-.quote-container button{
-  padding: 0.5rem 2rem;
-  border-radius: 1rem;
-  background-color: black;
-  font-weight: 700;
-  font-size: 1rem;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-.back-btn{
-  padding: 0.5rem 2rem;
-  border-radius: 1rem;
-  background-color: black;
-  font-weight: 700;
-  color: white;
-  border: none;
-  cursor: pointer;
 }
 .quote-area p{
   padding: 1rem;
   font-weight: 500;
 }
-
-@media (max-width: 768px) {
-  .pomodomo-container{
-    height: 40vh;
-    width: 40vh;
-  }
+.quote-area h1{
+  font-weight: 400;
 }
+

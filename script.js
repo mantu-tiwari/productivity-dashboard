@@ -19,7 +19,7 @@ const quoteClose = document.querySelector("#quote-page button");
 const date = document.querySelector("#date h3");
 const time = document.querySelector("#time h3");
 const themeBtn = document.querySelector("nav i");
-
+// Pages Selections
 const todoForm = document.querySelector(".todo-form");
 const todoContainer = document.querySelector(".todo-list");
 const plannerContainer = document.querySelector(".planner-cards");
@@ -28,14 +28,14 @@ const goalForm = document.querySelector(".goal-form");
 const playBtn = document.querySelector("#play-btn");
 const pauseBtn = document.querySelector("#pause-btn");
 const resetBtn = document.querySelector("#reset-btn");
-const timer = document.querySelector(".pomodomo-container h1");
-const newQuoteBtn = document.querySelector('.quote-container button')
-const quoteTxt = document.querySelector('.quote-area h1')
-const quoteAuthor = document.querySelector('.quote-area p')
-const dashboardQuote = document.querySelector('.summary-dsb p')
-const weather = document.querySelector('#weather p')
-const tempe = document.querySelector('#weather h3')
-const city = document.querySelector('#weather h2')
+const timer = document.querySelector("#pomodomo-container h1");
+const newQuoteBtn = document.querySelector("#quote-container button");
+const quoteTxt = document.querySelector(".quote-area h1");
+const quoteAuthor = document.querySelector(".quote-area p");
+const dashboardQuote = document.querySelector(".summary-dsb p");
+const weather = document.querySelector("#weather p");
+const tempe = document.querySelector("#weather h3");
+const city = document.querySelector("#weather h2");
 
 // Open Page and Close Page
 function toggelPage(openBtn, page, closeBtn) {
@@ -202,46 +202,46 @@ pauseBtn.addEventListener("click", () => {
 resetBtn.addEventListener("click", () => {
   clearInterval(timeInterval);
   timeInterval = null;
-  timeleft = 25*60
-  timer.innerHTML = '25:00'
+  timeleft = 25 * 60;
+  timer.innerHTML = "25:00";
 });
 
 // Quote Implementation
-newQuoteBtn.addEventListener('click', () => {
-    console.log('new quote');
-    newQuote();
-})
+newQuoteBtn.addEventListener("click", () => {
+  console.log("new quote");
+  newQuote();
+});
 async function newQuote() {
-  const response = await fetch('https://dummyjson.com/quotes/random')
+  const response = await fetch("https://dummyjson.com/quotes/random");
   const data = await response.json();
-  quoteTxt.textContent = data.quote
-  quoteAuthor.textContent = data.author
-  dashboardQuote.textContent = data.quote
+  quoteTxt.textContent = data.quote;
+  quoteAuthor.textContent = data.author;
+  dashboardQuote.textContent = data.quote;
 }
-newQuote()
+newQuote();
 
 // weather Implementation
 const apiKey = "739c3f2fa3733eef18802930b18ad22c";
 navigator.geolocation.getCurrentPosition(currentTemp);
 async function currentTemp(position) {
-    try {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
-        if (!response.ok) {
-            throw new Error("Weather API Error");
-        }
-        const data = await response.json();
-        console.log(data);
-        city.textContent = data.name;
-        tempe.textContent = `${Math.round(data.main.temp)}°C`;
-        weather.textContent = data.weather[0].main;
-    } catch (err) {
-        console.log(err);
-        city.textContent = "Unavailable";
-        tempe.textContent = "--°C";
-        weather.textContent = "Weather unavailable";
+  try {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`,
+    );
+    if (!response.ok) {
+      throw new Error("Weather API Error");
     }
-
+    const data = await response.json();
+    console.log(data);
+    city.textContent = data.name;
+    tempe.textContent = `${Math.round(data.main.temp)}°C`;
+    weather.textContent = data.weather[0].main;
+  } catch (err) {
+    console.log(err);
+    city.textContent = "Unavailable";
+    tempe.textContent = "--°C";
+    weather.textContent = "Weather unavailable";
+  }
 }
-
