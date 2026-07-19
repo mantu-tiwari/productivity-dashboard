@@ -57,7 +57,7 @@ themeBtn.addEventListener("click", () => {
 
 // To-do Application
 const todoData = [];
-const ui = () => {
+const renderTodo = () => {
   todoContainer.innerHTML = "";
   todoData.forEach((task, i) => {
     todoContainer.innerHTML += `<div class="todo-works">
@@ -72,7 +72,7 @@ const ui = () => {
             </div>`;
   });
 };
-ui()
+renderTodo()
 
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -83,21 +83,21 @@ todoForm.addEventListener("submit", (e) => {
     important: false,
   });
   console.log(todoData);
-  ui();
+  renderTodo();
   todoForm.reset();
 });
 const deleteTask = (idx) => {
   todoData.splice(idx, 1);
   console.log(todoData);
-  ui();
+  renderTodo();
 };
 const impTask = (i) => {
   todoData[i].important = !todoData[i].important;
       console.log(todoData[i]);  
-  ui();
+  renderTodo();
 };
 const completedTask = (i) => {
   todoData[i].completed = !todoData[i].completed;
       console.log(todoData[i]);  
-  ui();
+  renderTodo();
 };
