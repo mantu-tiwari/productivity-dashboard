@@ -29,6 +29,10 @@ const playBtn = document.querySelector("#play-btn");
 const pauseBtn = document.querySelector("#pause-btn");
 const resetBtn = document.querySelector("#reset-btn");
 const timer = document.querySelector(".pomodomo-container h1");
+const newQuoteBtn = document.querySelector('.quote-container button')
+const quoteTxt = document.querySelector('.quote-area h1')
+const quoteAuthor = document.querySelector('.quote-area p')
+const dashboardQuote = document.querySelector('.summary-dsb p')
 
 // Open Page and Close Page
 function toggelPage(openBtn, page, closeBtn) {
@@ -198,3 +202,18 @@ resetBtn.addEventListener("click", () => {
   timeleft = 25*60
   timer.innerHTML = '25:00'
 });
+
+// Quote Implementation
+newQuoteBtn.addEventListener('click', () => {
+    console.log('new quote');
+    newQuote();
+})
+async function newQuote() {
+  const response = await fetch('https://dummyjson.com/quotes/random')
+  const data = await response.json();
+  quoteTxt.textContent = data.quote
+  quoteAuthor.textContent = data.author
+  dashboardQuote.textContent = data.quote
+}
+newQuote()
+

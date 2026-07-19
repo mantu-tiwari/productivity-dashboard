@@ -424,14 +424,51 @@ section{
 
 /* Quote Page Section */
 #quote-page{
-  /* width: 100%; */
+  width: 100%;
+  min-height: 80vh;
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   background-color: var(--primary-color);
   display: none;
+  flex-direction: column;
+  gap: 2rem;
 }
-
+.quote-container{
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  align-self: center;
+  gap: 2rem;
+  padding: 1rem ;
+  border-radius: var(--rounded);
+}
+.quote-container button{
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  background-color: black;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.back-btn{
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  background-color: black;
+  font-weight: 700;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.quote-area p{
+  padding: 1rem;
+  font-weight: 500;
+}
 
 @media (max-width: 768px) {
   .pomodomo-container{
