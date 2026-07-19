@@ -61,10 +61,10 @@ const ui = () => {
   todoContainer.innerHTML = "";
   todoData.forEach((task, i) => {
     todoContainer.innerHTML += `<div class="todo-works">
-              <h3> ${task.task} </h3>
+              <h3 class='${task.completed ? 'completed' : ''} ' > ${task.task} </h3>
               <div>
                 <label> 
-                  <input type="checkbox" name="Complete" > Complete
+                  <input onclick="completedTask(${i})" type="checkbox" ${task.completed ? 'checked' : ''} name="Complete" > Complete
                 </label>
                 <i onclick="deleteTask(${i})" class="fa-solid fa-trash"></i>
                 <i onclick="impTask(${i})" class="fa-solid fa-star ${task.important ? "important" : ''}"></i>
@@ -94,6 +94,10 @@ const deleteTask = (idx) => {
 const impTask = (i) => {
   todoData[i].important = !todoData[i].important;
       console.log(todoData[i]);  
-
+  ui();
+};
+const completedTask = (i) => {
+  todoData[i].completed = !todoData[i].completed;
+      console.log(todoData[i]);  
   ui();
 };

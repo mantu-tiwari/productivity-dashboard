@@ -130,9 +130,9 @@ section{
 /* To-Do Page Section */
 #todo-page{
   width: 100%;
-  position: absolute;
-  min-height: 89vh;
+  min-height: 80vh;
   overflow: hidden;
+  position: absolute;
   top: 0;
   left: 0;
   background-color: var(--primary-color);
@@ -219,15 +219,19 @@ section{
 .important{
   color: gold !important;
 }
+.completed{
+    text-decoration: line-through;
+    opacity: .6;
+}
 
 /* Daily Planner Page Section */
 #planner-page{
-  /* width: 100%; */
+  
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--primary-color);
-  display: none;
+  background-color: var(--secondary-color);
+  display: flex;
 }
 
 /* Daily Foal Page Section */
